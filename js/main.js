@@ -1,13 +1,7 @@
 // 1-davaleba
 
 function isMultipleOfFive(number) {
-  if (number % 5 === 0) {
-    return true;
-  } else {
-    return false;
-  }
   return number % 5 === 0 ? true : false;
-  return number % 5 === 0;
 }
 console.log(isMultipleOfFive(5));
 console.log(isMultipleOfFive(9));
@@ -17,21 +11,22 @@ console.log(isMultipleOfFive(9));
 function calculateDiscountedPrice(price, discount) {
   const percentage = discount / 100;
   const discountedPrice = price * percentage;
-  return Math.round(price - discountedPrice);
+  return price - discountedPrice;
 }
-console.log(calculateDiscountedPrice(997, 30));
+console.log(calculateDiscountedPrice(1000, 10));
 
 // 3-davaleba
 
 function getCurrencySymbolFromCode(code) {
   const formatedCode = code.toUpperCase();
   switch (formatedCode) {
+    case "GEL":
+      return "₾";
     case "USD":
       return "$";
     case "EUR":
       return "€";
-    case "GEL":
-      return "₾";
+
     default:
       return "Unknown currency code";
   }
@@ -54,10 +49,8 @@ function filterOddNumbers(numbers) {
   const filteredArray = numbers.filter((number) => number % 2 === 1);
   return filteredArray;
 }
-const numbersArr = [10, 2, 30, 4, 50, 6, 7, 8, 9];
-const sum = numbersArr.reduce((initialValue, element) => {
-  return initialValue + element;
-}, 10);
+const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 console.log(Math.max(...numbersArr));
 console.log(filterOddNumbers(numbersArr));
 
